@@ -57,7 +57,7 @@ Person.prototype.poop=function(){
   console.log(this.stomach);
 }
 Person.prototype.toString=function(Person){
-  return this.name, this.age;
+  return `${this.name}, ${this.age}`;
 }
 let ben=new Person("Ben",29);
 console.log(ben);
