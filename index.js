@@ -83,10 +83,14 @@ function Airplane(name) {
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
-    1. 
-    2. 
-    3. 
-    4. 
+    
+    1. If "this" is contained in a global function it reaches to the window as an object.
+    
+    2. "." notation assings "this" to an object.
+    
+    3.   When creating new objects, "this" references the prototype.
+    
+    4. "Call" and "apply" methods are used in objects with explicitely defined "this"'s in explicit binding, but implicit binding does not use them.
   */
   
   
