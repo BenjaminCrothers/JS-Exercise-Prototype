@@ -39,32 +39,32 @@ function Airplane(name) {
           + It should return a string with `name` and `age`. Example: "Mary, 50"
   */
   
- function Person(name,age) {
-  this.name=name;
-  this.age=age;
-  this.stomach=[];
-}
-Person.prototype.eat=function(someFood){
-  if(this.stomach.length<10){
-  this.stomach.push(someFood);
-  console.log(this.stomach);
-  }else{
-  return `You are full.`; 
+  function Person(name,age) {
+    this.name=name;
+    this.age=age;
+    this.stomach=[];
   }
-}
-Person.prototype.poop=function(){
-  this.stomach=[];
-  console.log(this.stomach);
-}
-Person.prototype.toString=function(Person){
-  return `${this.name}, ${this.age}`;
-}
-let ben=new Person("Ben",29);
-console.log(ben);
+  Person.prototype.eat=function(someFood){
+    if(this.stomach.length<10){
+      this.stomach.push(someFood);
+      console.log(this.stomach);
+    }else{
+      return `You are full.`; 
+    }
+  }
+  Person.prototype.poop=function(){
+    this.stomach=[];
+    console.log(this.stomach);
+  }
+  Person.prototype.toString=function(Person){
+    return `${this.name}, ${this.age}`;
+  }
+  let ben=new Person("Ben",29);
+  console.log(ben);
 
-console.log(ben.eat("Pizza"));
-console.log(ben.poop());
-console.log(ben.toString());
+  console.log(ben.eat("Pizza"));
+  console.log(ben.poop());
+  console.log(ben.toString());
   
   
   /*
@@ -81,9 +81,19 @@ console.log(ben.toString());
           + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
   */
   
- function Car() {
-    
+  function Car(model,milesPerGallon) {
+    this.model=model;
+    this.milesPerGallon=milesPerGallon;
+    this.tank=0;
+    this.odometer=0;
   }
+  Car.prototype.fill=function(gallons){
+    this.tank+=gallons;
+  }
+  let myTruck=new Car("F-150",16);
+  console.log(myTruck);
+  myTruck.fill(20);
+  console.log(myTruck.tank);
   
   
   /*
