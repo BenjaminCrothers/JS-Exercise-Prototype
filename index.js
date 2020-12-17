@@ -47,7 +47,7 @@ function Airplane(name) {
   Person.prototype.eat=function(someFood){
     if(this.stomach.length<10){
       this.stomach.push(someFood);
-      console.log(this.stomach);
+      // console.log(this.stomach);
     }else{
       return `You are full.`; 
     }
@@ -103,11 +103,23 @@ function Airplane(name) {
       - Besides the methods on Person.prototype, babies have the ability to `.play()`:
           + Should return a string "Playing with x", x being the favorite toy.
   */
- function Baby() {
-   
+  function Baby(name,age,favoriteToy) {
+    Person.call(this,name,age);
+    this.favoriteToy=favoriteToy;
   }
- 
+
+  Baby.prototype=Object.create(Person.prototype);
   
+  Baby.prototype.play=function(){
+    return `Playing with ${this.favoriteToy}`;
+  }
+
+  let bunInTheOven=new Baby("Aaron or Erin",0,"thing")
+  // console.log(bunInTheOven);
+  // console.log(bunInTheOven.play("Lego X-Wing"));
+  console.log("BABY",bunInTheOven.play());
+
+
   /* 
     TASK 4
     In your own words explain the four principles for the "this" keyword below:
